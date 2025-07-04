@@ -10,39 +10,36 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/app/ui/Navbar";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export function Appbar() {
+  const router = useRouter()
   const navItems = [
     {
-      name: "Features",
-      link: "#features",
-    },
-    {
-      name: "Pricing",
-      link: "#pricing",
+      name: "Brower Artist",
+      link: "/artist",
     },
     {
       name: "Contact",
-      link: "#contact",
+      link: "/contact",
     },
+    
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
       <Navbar>
-        {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            <NavbarButton variant="secondary" onClick={()=> router.push('/signup') }>Sign Up</NavbarButton>
+            <NavbarButton variant="dark" onClick={()=> router.push('/signin')}>Sign In</NavbarButton>
           </div>
         </NavBody>
 
-        {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
@@ -72,14 +69,16 @@ export function Appbar() {
                 variant="primary"
                 className="w-full"
               >
-                Login
+                Sign Up
               </NavbarButton>
               <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => setIsMobileMenuOpen(false) 
+
+                }
                 variant="primary"
                 className="w-full"
               >
-                Book a call
+                Sign In
               </NavbarButton>
             </div>
           </MobileNavMenu>

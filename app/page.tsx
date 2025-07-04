@@ -1,19 +1,20 @@
 import React from 'react'
 import { Background } from './components/Background'
 import { Appbar } from './components/Appbar'
-import { MacbookScrollDemo } from './components/MacbookScroll'
-// import { BentoGridDemo } from './components/BentoGridDemo'
-import { TracingBeamDemo } from './components/TracingBeam'
-
+import { ThreeDMarqueeDemo } from './components/ThreeDMarquee'
+import { FeaturesSection } from './components/FeatureSection'
+import { SpotlightPreview } from './components/SpotlightPreview'
+import Footer from './components/Footer'
 
 const Page = () => {
   return (
     <div>
         <Background/>
         <Appbar/>
-        <MacbookScrollDemo/>
-        {/* <BentoGridDemo/> */}
-        <TracingBeamDemo/>
+        <SpotlightPreview/>
+        <ThreeDMarqueeDemo/>
+        <FeaturesSection/>
+        <Footer/>
     </div>
   )
 }
