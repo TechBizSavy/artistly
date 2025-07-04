@@ -48,7 +48,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
       return;
     }
 
-    const key = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+    const key = "rzp_test_d1PXylAalAm2BW";"
     if (!key) {
       alert("Missing Razorpay Key. Set NEXT_PUBLIC_RAZORPAY_KEY_ID in .env.local");
       setLoading(false);
